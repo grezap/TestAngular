@@ -6,7 +6,11 @@
 <p>{{ serverName }}</p>
 <button class="btn btn-primary" [disabled]="!allowNewServers" (click)="onCreateServer()">Add Server</button>
 <!-- <p [innerText]="allowNewServers"></p> -->
-<p id="parag" #parag>{{serverCreationStatus}}</p>
+<!-- <p id="parag" #parag>{{serverCreationStatus}}</p> -->
+<p *ngIf="serverCreated; else noServer">Server was created, server name is {{serverName}}</p>
+<ng-template #noServer>
+    <p>No server was created</p>
+</ng-template>
 
 <app-server></app-server> 
 <app-server></app-server> 
