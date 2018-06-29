@@ -12,5 +12,7 @@
     <p>No server was created</p>
 </ng-template>
 
-<app-server></app-server> 
-<app-server></app-server> 
+<app-server *ngFor="let srv of servers; let i = index"
+    [ngStyle]="{backgroundColor: i >= 3 ? 'blue' : 'transparent'}">
+</app-server> 
+
